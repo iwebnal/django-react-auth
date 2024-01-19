@@ -28,11 +28,11 @@ DEBUG = os.getenv('DEBUG')
 
 ALLOWED_HOSTS = ['nartlang.ru', 'www.nartlang.ru']
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost',
-    'http://127.0.0.1',
-    'http://0.0.0.0',
-]
+# CORS_ALLOWED_ORIGINS = [
+#     'http://localhost',
+#     'http://127.0.0.1',
+#     'http://0.0.0.0',
+# ]
 
 CORS_ALLOW_CREDENTIALS = True
 
