@@ -12,16 +12,11 @@ class UserRegister(APIView):
 	def post(self, request):
 		clean_data = custom_validation(request.data)
 		serializer = UserRegisterSerializer(data=clean_data)
-		response201 = Response(serializer.data, status=status.HTTP_201_CREATED)
-		response400 = Response(status=status.HTTP_400_BAD_REQUEST)
 		if serializer.is_valid(raise_exception=True):
 			user = serializer.create(clean_data)
 			if user:
-				# return Response(serializer.data, status=status.HTTP_201_CREATED)
-				# response201['Access-Control-Allow-Origin'] = 'http://nartlang.ru:8000'
-				return response201
-		# return Response(status=status.HTTP_400_BAD_REQUEST)
-		return response400
+				return Response(serializer.data, status=status.HTTP_201_CREATED)
+		return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
 class UserLogin(APIView):
