@@ -34,6 +34,10 @@ ALLOWED_HOSTS = ['http://127.0.0.1', 'nartlang.ru', 'www.nartlang.ru']
 #     'http://0.0.0.0',
 # ]
 
+CORS_ALLOWED_ORIGINS = [
+    'http://nartlang.ru',
+]
+
 CORS_ALLOW_CREDENTIALS = True
 
 
