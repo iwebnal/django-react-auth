@@ -21,22 +21,40 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
+# ---> Development on a remote server
 SECRET_KEY = os.getenv('SECRET_KEY')
 
+# ---> Development on a remote server
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = ['http://127.0.0.1', 'nartlang.ru', 'www.nartlang.ru']
+# ---> Development on a remote server
+ALLOWED_HOSTS = ['nartlang.ru', 'www.nartlang.ru']
 
+# ---> Development on a remote server
+CORS_ALLOWED_ORIGINS = [
+    'http://nartlang.ru',
+]
+
+
+# ---> Local development
+# SECRET_KEY = 'django-insecure--o+^2-knvxng9b0p=hz8g6-l-y8h15%vn7)v2luv_2#$lq_xef'
+
+# ---> Local development
+# DEBUG = True
+
+# ---> Local development
+# ALLOWED_HOSTS = ['*']
+
+# ---> Local development
 # CORS_ALLOWED_ORIGINS = [
 #     'http://localhost',
 #     'http://127.0.0.1',
 #     'http://0.0.0.0',
+#     'http://localhost:3000',
 # ]
 
-CORS_ALLOWED_ORIGINS = [
-    'http://nartlang.ru',
-]
 
 CORS_ALLOW_CREDENTIALS = True
 

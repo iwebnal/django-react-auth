@@ -20,3 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('user_api.urls')),
 ]
+
+handler404 = 'user_api.views.page_not_found'
